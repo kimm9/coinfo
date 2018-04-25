@@ -1,0 +1,55 @@
+<div id="search1" class="container"><center>
+  <br><br><br><br>
+  <h2>Search Results</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Cryptocurrency</th>
+        <th>Symbol</th>
+        <th>Current Price in USD</th>
+        <th>Percent Change in 1 Hour</th>
+        <th>Percent Change in 24 Hour</th>
+        <th>Percent Change in 7 Days</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @coin['name'] %></td>
+        <td><%= @coin['symbol'] %></td>
+        <td>$<%= @coin['price_usd'] %></td>
+        <td><%= @coin['percent_change_1h'] %></td>
+        <td><%= @coin['percent_change_24h'] %></td>
+        <td><%= @coin['percent_change_7d'] %></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <br><br>
+
+
+
+
+  <%= form_for Coin.new do |f| %>
+
+
+
+  <%= f.hidden_field :coin_name, :value => @coin['name'] %> <br>
+  <%= f.hidden_field :symbol, :value => @coin['symbol']%> <br>
+  <%= f.hidden_field :price_usd, :value => @coin['price_usd'] %> <br>
+  <%= f.hidden_field :percent_change_1h, :value => @coin['percent_change_1h'] %> <br>
+  <%= f.hidden_field :percent_change_24h, :value => @coin['percent_change_24h'] %> <br>
+  <%= f.hidden_field :percent_change_7d, :value => @coin['percent_change_7d'] %> <br>
+
+
+  <h5>Add Cryptocurrency To Portfolio</h5>
+
+  <%= f.label :portfolios %>
+  <%= f.collection_select :portfolios, @portfolios, :id, :title %>
+  <br>
+  <%= f.submit "Add Coin", class: "btn btn-primary" %>
+  <% end %>
+
+
+</div>

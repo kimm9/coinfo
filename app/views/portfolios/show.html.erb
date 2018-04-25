@@ -1,0 +1,31 @@
+
+
+<main>
+<div class="container">
+  <div class="portrow row">
+    <h3><center><%= @portfolio.title %></h3>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Cryptocurrency</th>
+            <th>Symbol</th>
+
+            <th>  </th>
+            <th>  </th>
+          </tr>
+        </thead>
+        <% @coins_arr.each do |coin| %>
+        <tbody>
+          <td><%= coin['coin_name'] %></td>
+          <td><%= coin['symbol'] %></td>
+
+          <td><%= link_to '<button class="btn btn-primary">View</button>'.html_safe, coin_path(coin.id) %></td>
+          <td><%= link_to '<button class="btn btn-primary">Delete</button>'.html_safe, coin_path(coin.id), :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></td>
+        </tbody>
+        <% end  %>
+      </table>
+  </div>
+</div>
+</main>

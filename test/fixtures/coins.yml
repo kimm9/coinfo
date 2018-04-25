@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  coin_name: MyString
+  symbol: MyString
+  price_usd: 1
+  percent_change_1h: 1
+  percent_change_24h: 1
+  percent_change_7d: 1
+
+two:
+  coin_name: MyString
+  symbol: MyString
+  price_usd: 1
+  percent_change_1h: 1
+  percent_change_24h: 1
+  percent_change_7d: 1
